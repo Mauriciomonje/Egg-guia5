@@ -7,8 +7,10 @@ import java.util.concurrent.SynchronousQueue;
 public class extra_2 {
     public static void main(String[] args) {
         Scanner leer= new Scanner(System.in);
-        int[]vec_1=new int [3];
-        int[]vec_2=new int [3];
+        System.out.println("Ingrese el tamanio de los vectores");
+        int N=leer.nextInt();
+        int[]vec_1=new int [N];
+        int[]vec_2=new int [N];
         int aux=0;
         boolean bandera=true;
         for (int i = 0; i < vec_2.length; i++) {
