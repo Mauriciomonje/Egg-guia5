@@ -20,14 +20,23 @@ con promedio mayor o igual al 7 de sus notas del curso.
 public class extra_4 {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
-        int[]nombre= new int[10];
-        int[]promedio= new int[10];
+        String[]nombre= new int[10];
+        Double[]promedio= new int[10];
         int aprobados=0;
         int desaprobados=0;
         relleno(nombre[],promedio[]);
-        aprobados-desaprobados(nombre[],promedio[]);
+        aprobados_desaprobados(nombre[],promedio[],aprobados,desaprobados);
     }
-    public static void aprobados_desaprobados(int[]nombre,int[]promedio) {
-        fori
+    public static void aprobados_desaprobados(String []nombre,Double[]promedio,int aprobados,int desaprobados) {
+        for (int i = 0; i < promedio.length; i++) {
+            if(promedio[i]>=7){
+                aprobados++;
+            }
+            else{
+                desaprobados++;
+            }
+        }
+        System.out.println("Cantidad de aprobados "+aprobados);
+        System.out.println("Cantidad de desaprobados "+desaprobados);
     }
 }
