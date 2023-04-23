@@ -15,19 +15,40 @@ y se guarda en el arreglo. Al final del programa los
 profesores necesitan obtener por pantalla la cantidad de aprobados
  y desaprobados, teniendo en cuenta que solo aprueban los alumnos
 con promedio mayor o igual al 7 de sus notas del curso.
-
  */
 public class extra_4 {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
-        int[]nombre= new int[10];
-        int[]promedio= new int[10];
+        String[]nombre= new String[10];
+        double[]promedio= new double[10];
         int aprobados=0;
         int desaprobados=0;
         relleno(nombre,promedio);
         //aprobados-desaprobados(nombre[],promedio[]);
     }
-    public static void relleno(int []nombre,int[]promedio) {
-        
+    public static void relleno(String []nombre,double[]promedio) {
+        Scanner leer=new Scanner(System.in);
+        int nota;
+        for (int i = 0; i < promedio.length; i++) {
+            System.out.println("Ingrese nombre del alumno de la posicion "+i);
+            nombre[i]=leer.nextLine();
+            System.out.println("Ingrese la nota del primer TP evaluativo ");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.1;
+            System.out.println("Ingrese nota de segundo TP evaluativo");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.15;
+            System.out.println("Ingrese nota del primer integrador");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.25;
+            System.out.println("Ingrese nota del segundo integrador");
+            nota=(int)(Math.random()*9)+1;
+            System.out.println(nota);
+            promedio[i]+=nota*0.5;
+            System.out.println(promedio[i]+" promedio");
+        }
     }
 }
