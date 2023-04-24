@@ -20,12 +20,12 @@ con promedio mayor o igual al 7 de sus notas del curso.
 public class extra_4 {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
-        String[]nombre= new int[10];
-        Double[]promedio= new int[10];
+        String[]nombre= new String[10];
+        Double[]promedio= new Double[10];
         int aprobados=0;
         int desaprobados=0;
-        relleno(nombre[],promedio[]);
-        aprobados_desaprobados(nombre[],promedio[],aprobados,desaprobados);
+        relleno(nombre,promedio);
+        aprobados_desaprobados(nombre,promedio,aprobados,desaprobados);
     }
     public static void aprobados_desaprobados(String []nombre,Double[]promedio,int aprobados,int desaprobados) {
         for (int i = 0; i < promedio.length; i++) {
@@ -39,16 +39,16 @@ public class extra_4 {
         System.out.println("Cantidad de aprobados "+aprobados);
         System.out.println("Cantidad de desaprobados "+desaprobados);
     }
-    public static void relleno(String []nombre,double[]promedio) {
+    public static void relleno(String []nombre,Double[]promedio) {
         Scanner leer=new Scanner(System.in);
-        int nota;
+        int nota=0;
         for (int i = 0; i < promedio.length; i++) {
             System.out.println("Ingrese nombre del alumno de la posicion "+i);
             nombre[i]=leer.nextLine();
             System.out.println("Ingrese la nota del primer TP evaluativo ");
             nota=(int)(Math.random()*9)+3;
             System.out.println(nota);
-            promedio[i]+=nota*0.1;
+            promedio[i]=nota*0.1;
             System.out.println("Ingrese nota de segundo TP evaluativo");
             nota=(int)(Math.random()*9)+3;
             System.out.println(nota);
