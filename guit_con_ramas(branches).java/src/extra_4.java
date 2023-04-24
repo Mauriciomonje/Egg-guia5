@@ -39,4 +39,29 @@ public class extra_4 {
         System.out.println("Cantidad de aprobados "+aprobados);
         System.out.println("Cantidad de desaprobados "+desaprobados);
     }
+    public static void relleno(String []nombre,double[]promedio) {
+        Scanner leer=new Scanner(System.in);
+        int nota;
+        for (int i = 0; i < promedio.length; i++) {
+            System.out.println("Ingrese nombre del alumno de la posicion "+i);
+            nombre[i]=leer.nextLine();
+            System.out.println("Ingrese la nota del primer TP evaluativo ");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.1;
+            System.out.println("Ingrese nota de segundo TP evaluativo");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.15;
+            System.out.println("Ingrese nota del primer integrador");
+            nota=(int)(Math.random()*9)+3;
+            System.out.println(nota);
+            promedio[i]+=nota*0.25;
+            System.out.println("Ingrese nota del segundo integrador");
+            nota=(int)(Math.random()*9)+1;
+            System.out.println(nota);
+            promedio[i]+=nota*0.5;
+            System.out.println(promedio[i]+" promedio");
+        }
+    }
 }
