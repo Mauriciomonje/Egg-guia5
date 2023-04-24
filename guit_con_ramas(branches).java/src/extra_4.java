@@ -15,16 +15,29 @@ y se guarda en el arreglo. Al final del programa los
 profesores necesitan obtener por pantalla la cantidad de aprobados
  y desaprobados, teniendo en cuenta que solo aprueban los alumnos
 con promedio mayor o igual al 7 de sus notas del curso.
+
  */
 public class extra_4 {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
-        String[]nombre= new String[10];
-        double[]promedio= new double[10];
+        String[]nombre= new int[10];
+        Double[]promedio= new int[10];
         int aprobados=0;
         int desaprobados=0;
-        relleno(nombre,promedio);
-        //aprobados-desaprobados(nombre[],promedio[]);
+        relleno(nombre[],promedio[]);
+        aprobados_desaprobados(nombre[],promedio[],aprobados,desaprobados);
+    }
+    public static void aprobados_desaprobados(String []nombre,Double[]promedio,int aprobados,int desaprobados) {
+        for (int i = 0; i < promedio.length; i++) {
+            if(promedio[i]>=7){
+                aprobados++;
+            }
+            else{
+                desaprobados++;
+            }
+        }
+        System.out.println("Cantidad de aprobados "+aprobados);
+        System.out.println("Cantidad de desaprobados "+desaprobados);
     }
     public static void relleno(String []nombre,double[]promedio) {
         Scanner leer=new Scanner(System.in);
